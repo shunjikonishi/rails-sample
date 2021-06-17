@@ -1,24 +1,10 @@
 # README
+Rails example with mysql
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Make tarball for track
 
-Things you may want to cover:
+```
+$ tar --exclude tmp --exclude docker-compose.yml --exclude "*.tar.gz" -zcvf rails-with-vendor.tar.gz *
+$ tar --exclude tmp --exclude vendor --exclude docker-compose.yml --exclude "*.tar.gz" -zcvf rails.tar.gz *
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
