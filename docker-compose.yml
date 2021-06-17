@@ -3,10 +3,14 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      # MYSQL_ROOT_PASSWORD: password
     volumes:
       - ./tmp/docker/mysql:/var/lib/mysql:delegated
-
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
   web:
     image: ruby:3.0.1
     command: sh init.sh

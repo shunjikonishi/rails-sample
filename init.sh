@@ -1,9 +1,9 @@
 echo "-------------------------------1"
-rm -f /myapp/tmp/pids/server.pid
+rm -f /rails-sample/tmp/pids/server.pid
 echo "-------------------------------2"
-bundle update --bundler
+# bundle update --bundler
 echo "-------------------------------3"
-bundle install
+bundle install --path vendor/bundle
 echo "-------------------------------4"
 bundle exec rails db:create
 echo "-------------------------------5"
